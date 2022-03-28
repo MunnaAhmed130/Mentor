@@ -2,10 +2,47 @@
   text-align: center;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
+} */
+
+
+.carousel.carousel-fade .carousel-item {
+  display: block;
+  opacity: 0;
+  transition: opacity ease-in-out .3s;
 }
+
+.carousel.carousel-fade .carousel-item.active {
+  opacity: 1 !important;
+}
+
+.carousel-item img{
+  height: 650px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel-caption h3{
+  font-size: 4rem;
+  /* margin-top: -100px;
+  display: inline-block; */
+}
+
+
+.carousel-caption p{
+  font-size: 1.1rem;
+  width: 60%;
+  margin-inline: auto;
+}
+
+.carousel-caption{
+  padding-bottom: 100px;
+}
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
