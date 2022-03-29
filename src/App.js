@@ -1,11 +1,13 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from "./Components/Home/Home/Home";
 import Services from "./Components/Services/Services";
+import AuthProvider from "./Context/AuthProvider";
 
 function App() {
   return (
-    <div className="App">
+    <AuthProvider>
+      <div className="App">
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -13,7 +15,8 @@ function App() {
           <Route path="/courses" element={<Services />} />
         </Routes>
       </BrowserRouter>
-    </div>
+      </div>
+    </AuthProvider>
   );
 }
 

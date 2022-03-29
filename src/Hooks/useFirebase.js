@@ -1,11 +1,13 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateProfile, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateProfile, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import initializeFirebase from "../Firebase/Firebase.init";
 
 
 
 
 
-const UseFirebase = () => {
+initializeFirebase();
+const useFirebase = () => {
     const [user, setUser] = useState([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
@@ -14,14 +16,16 @@ const UseFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
-    const registerWithEmail = (email, password) => {
+    const registerWithEmail = (email, password, name, history) => {
+        setLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
-                const user = userCredential.user;
-                // ...
+                setError('');
+                const newUser = { email, displayName: name };
+                setUser(newUser);
                 updateProfile(auth.currentUser, {
-                    displayName: "Jane Q. User"
+                    displayName: name
                 }).then(() => {
                     // Profile updated!
                     // ...
@@ -31,67 +35,63 @@ const UseFirebase = () => {
                 });
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // ..
-            });
+                setError(error.message);
+            })
+            .finally(() => setLoading(false));
     }
 
-    const signInWithEmail = (email, password) => {
+    const signInWithEmail = (email, password, location, history) => {
+        setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
-                const user = userCredential.user;
-                // ...
+                const destination = location?.state?.from || '/';
+                history(destination);
+                setError('');
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-            });
+                setError(error.message)
+            })
+            .finally(() => setLoading(false));
     }
 
-    const signInWithGoogle = () => {
+    const signInWithGoogle = (location, history) => {
+        setLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                // The signed-in user info.
                 const user = result.user;
-                // ...
+                const destination = location?.state?.from || '/';
+                history(destination);
+                setError('');
             }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
-            });
+                setError(error.message);
+            })
+            .finally(() => setLoading(false));
     }
 
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
-                // User is signed in, see docs for a list of available properties
-                // https://firebase.google.com/docs/reference/js/firebase.User
-                const uid = user.uid;
-                // ...
+                setUser(user);
             } else {
-                // User is signed out
-                // ...
+                setUser({});
             }
+            setLoading(false);
         });
         return () => unsubscribed;
-    }, [])
+    }, [auth])
 
     const logOut = () => {
-        signOut(auth).then(() => {
-            // Sign-out successful.
-        }).catch((error) => {
-            // An error happened.
-        });
+        setLoading(true)
+        signOut(auth)
+            .then(() => {
+                // Sign-out successful.
+                setUser({});
+            }).catch((error) => {
+                // An error happened.
+                setError(error.message);
+            })
+            .finally(() => setLoading(false));
     }
 
     return {
@@ -99,8 +99,9 @@ const UseFirebase = () => {
         error,
         registerWithEmail,
         signInWithEmail,
+        signInWithGoogle,
         logOut
     }
 };
 
-export default UseFirebase;
+export default useFirebase;
