@@ -14,8 +14,8 @@ const Header = () => {
         else {
             setNavbar(false);
         }
-        console.log(window.scrollY)
-        console.log(window.innerWidth)
+        // console.log(window.scrollY)
+        // console.log(window.innerWidth)
     };
     // const changeBackground = () => {
     //     if (window.scrollY >= 64) {
@@ -27,7 +27,7 @@ const Header = () => {
     //     console.log(window.scrollY)
     // };
 
-    window.addEventListener('scroll', changeBackground);
+    // window.addEventListener('scroll', changeBackground);
     return (
         <>
             <Navbar
