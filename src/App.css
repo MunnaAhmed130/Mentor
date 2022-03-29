@@ -128,7 +128,13 @@
 .carousel-caption{
   padding-bottom: 100px;
 }
-
+@media screen and (max-width: 600px) {
+  .carousel-caption h3{
+    font-size: 3rem;
+    /* margin-top: -100px;
+    display: inline-block; */
+  }
+}
 
 /* Login form style */
 .login-form input{
@@ -159,6 +165,8 @@
 .login-btn:hover{
   background-color: #0b53bf;
 }
+
+
 
 /* Register Form Style */
 
