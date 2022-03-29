@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Alert, Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Alert, Button, Col, Container, Row } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
 
 const AddOrder = () => {
@@ -28,7 +28,7 @@ const AddOrder = () => {
 
                             <input
                                 name="userName"
-                                defaultValue={user.userName}
+                                defaultValue={user.displayName}
                                 disabled
                             /> <br />
                             <input
@@ -66,7 +66,7 @@ const AddOrder = () => {
                                 disabled
                                 variant="outlined"
                             /> <br />
-                            <Button onClick={() => setSuccess(true)} type="submit" variant='contained' className="purchase-btn">Purchase</Button>
+                            <Button onClick={() => setSuccess(true)} type="submit" className="purchase-btn buy-btn">Purchase</Button>
                         </form>}
                     </Col>
                 </Row>
