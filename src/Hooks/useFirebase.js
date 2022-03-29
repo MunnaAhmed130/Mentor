@@ -33,6 +33,7 @@ const useFirebase = () => {
                     // An error occurred
                     // ...
                 });
+                history('/')
             })
             .catch((error) => {
                 setError(error.message);
@@ -73,6 +74,7 @@ const useFirebase = () => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
+                console.log(user)
             } else {
                 setUser({});
             }

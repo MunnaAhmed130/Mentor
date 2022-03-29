@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "course_name": "Web Development",
+        "img": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200203200336/13-Things-You-Should-Know-Before-You-Enter-In-Web-Development.png",
+        "rating": 4.5,
+        "description": "We teach from basic to pro level student.We make them ready for their career by giving them real life projects....",
+        "classes": {
+            "count": 20,
+            "duration": "2 hours 30 min"
+        },
+        "course_duration": "6 month",
+        "price": 30
+    },
+    {
+        "id": 2,
+        "course_name": "Web Design",
+        "img": "data:image/png;base64,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",
+        "rating": 4.5,
+        "description": "We teach from basic to pro level student.We make them ready for their career by giving them real life projects....",
+        "classes": {
+            "count": 20,
+            "duration": "2 hours 30 min"
+        },
+        "course_duration": "6 month",
+        "price": 30
+    },
+    {
+        "id": 3,
+        "course_name": "Data Science",
+        "img": "https://www.sharda.ac.in/blog/wp-content/uploads/2020/04/Data-Science-1.jpg",
+        "rating": 4.5,
+        "description": "We teach from basic to pro level student.We make them ready for their career by giving them real life projects....",
+        "classes": {
+            "count": 20,
+            "duration": "2 hours 30 min"
+        },
+        "course_duration": "6 month",
+        "price": 30
+    },
+    {
+        "id": 4,
+        "course_name": "Data Analyst",
+        "img": "https://www.edureka.co/blog/wp-content/uploads/2018/12/Basic-Data-Analyst-Questions-Data-Analyst-Interview-Questions-Edureka.png",
+        "rating": 4.5,
+        "description": "We teach from basic to pro level student.We make them ready for their career by giving them real life projects....",
+        "classes": {
+            "count": 20,
+            "duration": "2 hours 30 min"
+        },
+        "course_duration": "6 month",
+        "price": 30
+    },
+    {
+        "id": 5,
+        "course_name": "Software Development",
+        "img": "https://www.datadriveninvestor.com/wp-content/uploads/2020/01/softwaredevelopment.png",
+        "rating": 4.5,
+        "description": "We teach from basic to pro level student.We make them ready for their career by giving them real life projects....",
+        "classes": {
+            "count": 20,
+            "duration": "2 hours 30 min"
+        },
+        "course_duration": "6 month",
+        "price": 30
+    },
+    {
+        "id": 6,
+        "course_name": "Adobe Photoshop",
+        "img": "https://petapixel.com/assets/uploads/2020/06/pslogo.jpg",
+        "rating": 4.5,
+        "description": "We teach from basic to pro level student.We make them ready for their career by giving them real life projects....",
+        "classes": {
+            "count": 20,
+            "duration": "2 hours 30 min"
+        },
+        "course_duration": "6 month",
+        "price": 30
+    },
+    {
+        "id": 7,
+        "course_name": "Adobe Illustrator",
+        "img": "http://vectorlogo4u.com/wp-content/uploads/2020/11/adobe-illustrator-cc-logo.png",
+        "rating": 4.5,
+        "description": "We teach from basic to pro level student.We make them ready for their career by giving them real life projects....",
+        "classes": {
+            "count": 20,
+            "duration": "2 hours 30 min"
+        },
+        "course_duration": "6 month",
+        "price": 30
+    }
+]

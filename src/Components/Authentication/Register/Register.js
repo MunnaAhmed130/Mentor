@@ -3,6 +3,7 @@ import { Alert, Button, Spinner } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import Footer from '../../../SharedComponents/Footer/Footer';
 
 const Register = () => {
     const { user, error, loading, registerWithEmail } = useAuth();
@@ -18,7 +19,7 @@ const Register = () => {
         console.log(user)
     };
     return (
-        <div>
+        <div className='register'>
             <h2 className="register-heading text-center">Please Register</h2>
             {!loading &&
                 <form className="register-form text-center" onSubmit={handleSubmit(onSubmit)}>
@@ -27,15 +28,16 @@ const Register = () => {
                     <input type="password" {...register("password", { required: true })} placeholder="Your password" required="required" /> <br />
                     <input type="password" {...register("password2", { required: true })} placeholder="Confirm your password" required="required" /> <br />
                     <Link to='/login'>Already Registered? Login</Link> <br />
-                    <Button className="mb-3" variant="contained" type="submit">Register</Button>
+                    <Button className="mb-3" type="submit">Register</Button>
                     {error && <Alert severity="error">{error}</Alert>}
                 </form>}
             {loading && <div className='circle'>
                 <Spinner /> <br />
             </div>}
             {user?.email && <div className='circle'>
-                <Alert severity="success" >This is a success alert — check it out!</Alert>
+                <Alert severity="success" >Successfully registered</Alert>
             </div>}
+            <Footer></Footer>
         </div>
     );
 };

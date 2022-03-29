@@ -1,20 +1,36 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import AboutUs from "./Components/AboutUs/AboutUs";
+import AddOrder from "./Components/AddOrder/AddOrder";
+import Login from "./Components/Authentication/Login/Login";
+import Register from "./Components/Authentication/Register/Register";
 import Home from "./Components/Home/Home/Home";
-import Services from "./Components/Services/Services";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import Courses from "./Components/Services/Courses/Courses";
 import AuthProvider from "./Context/AuthProvider";
+import Footer from "./SharedComponents/Footer/Footer";
+import Header from "./SharedComponents/Header/Header";
 
 function App() {
   return (
     <AuthProvider>
       <div className="App">
-      <BrowserRouter>
+        <BrowserRouter>
+          <Header></Header>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/courses" element={<Services />} />
-        </Routes>
-      </BrowserRouter>
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/aboutUs" element={<AboutUs />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/addOrder" element={<AddOrder />} />
+
+            <Route path="/addOrder/:id" element={<PrivateRoute><AddOrder /></PrivateRoute>} />
+          </Routes>
+
+        </BrowserRouter>
+
       </div>
     </AuthProvider>
   );
