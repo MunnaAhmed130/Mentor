@@ -14,8 +14,8 @@ const HomeService = () => {
             {/* <Header /> */}
             <div className='pb-4 pt-5'>
                 <h2 className='pb-4 pt-5 fs-1 fw-bolder'>Our Popular Courses</h2>
-                <Container>
-                    <Row xs={2} lg={3} md={3} className='g-4'  >
+                <Container >
+                    <Row sm={1} lg={3} md={2} className='g-4'  >
                         {
                             courses.slice(0, 6).map(course => <Course
                                 key={course.id}

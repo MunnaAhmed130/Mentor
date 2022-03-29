@@ -5,6 +5,7 @@ import AboutUs from '../../AboutUs/AboutUs';
 import Courses from '../../Services/Courses/Courses';
 import Banner from '../Banner/Banner';
 import HomeService from '../HomeService/HomeService';
+import Newsletter from '../Newsletter/Newsletter';
 
 const Home = () => {
     return (
@@ -13,7 +14,8 @@ const Home = () => {
             <Banner />
             <HomeService />
             <AboutUs />
-            <Footer />
+            <Newsletter />
+            {/* <Footer /> */}
         </div>
     );
 };

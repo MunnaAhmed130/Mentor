@@ -37,7 +37,7 @@ const Register = () => {
             {user?.email && <div className='circle'>
                 <Alert severity="success" >Successfully registered</Alert>
             </div>}
-            <Footer></Footer>
+
         </div>
     );
 };

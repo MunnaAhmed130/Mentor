@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-            <Route path="/courses" element={<Courses />} />
+            <Route path="/courses" element={<PrivateRoute><Courses /></PrivateRoute>} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -28,7 +28,7 @@ function App() {
 
             <Route path="/addOrder/:id" element={<PrivateRoute><AddOrder /></PrivateRoute>} />
           </Routes>
-
+          <Footer />
         </BrowserRouter>
 
       </div>

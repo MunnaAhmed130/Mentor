@@ -16,7 +16,7 @@ const Course = ({ Course }) => {
                         <Col className='border-end'><span className='fw-bold'>Course:</span><br /> {course_duration}</Col>
                         <Col ><span className='fw-bold'>Class Size :</span><br />{classes.count} </Col>
                     </Row>
-                    <Row lg={2}>
+                    <Row lg={2} md={1}>
                         <p className='pt-3 price fw-bold '>Price: {price} $</p>
                         <Link className='buy-btn-container' to={`/addOrder/${Course.id}`}><Button className='buy-btn' variant="primary">Buy Now</Button></Link>
                     </Row>

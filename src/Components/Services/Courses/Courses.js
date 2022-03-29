@@ -17,7 +17,7 @@ const Courses = () => {
             <div className='pb-4 pt-5'>
                 <h1 className='pb-4 pt-5'>Our Popular Courses</h1>
                 <Container>
-                    <Row xs={2} lg={3} md={3} className='g-4'  >
+                    <Row xs={1} lg={3} md={2} className='g-4'  >
                         {
                             courses.map(course => <Course
                                 key={course.id}
@@ -26,7 +26,7 @@ const Courses = () => {
                 </Container>
 
             </div>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </>
 
     );
