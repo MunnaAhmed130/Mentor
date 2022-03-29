@@ -13,12 +13,12 @@ const AboutUs = () => {
     }, [])
     return (
         <Container fluid>
-            <Container className="pt-5">
+            <Container fluid className="pt-5">
                 <div className='about'>
                     <h2 className='fs-1 fw-bolder'>About us</h2>
                     <p>We are an organization trying to make the world a better place by spreading real life knowledge and skill. we have the best teachers and we give real life projects and assignments to better our learning capablity</p>
                 </div>
-                <Row xs={1} md={2} lg={4} className='info-row'>
+                <Row xs={1} md={2} lg={4} className='info-row '>
                     <Col>
                         <p className='icon'> <FontAwesomeIcon icon={faSmile} /></p>
                         <span>
@@ -51,7 +51,7 @@ const AboutUs = () => {
             </Container>
             <Container >
                 <h2 className='p-4 fs-1 fw-bolder'>Our Best Teachers</h2>
-                <Row md={2} lg={4} xs={1} className='g-4 pb-4 pt-4 px-0 teachers-row'>
+                <Row md={2} lg={4} xs={1} className='g-4 pb-4 pt-4  teachers-row'>
                     {
                         teachers.map(teacher => <Teachers
                             teacher={teacher}

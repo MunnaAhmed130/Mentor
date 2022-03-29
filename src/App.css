@@ -203,8 +203,10 @@ margin-bottom: 20px;
   color: white;
   background-blend-mode: darken;
   background-attachment:fixed;
+  background-position: center;
   padding-bottom: 20px;
-  width: 100%;
+  /* width: 100%; */
+  margin-block: 0px;
 }
 
 .info-row span{
@@ -256,7 +258,7 @@ margin-bottom: 20px;
 }
 
 .teachers-row{
-  width: 100%;
+  /* width: 100%; */
   text-align: center;
 }
 /* course style */
