@@ -193,10 +193,67 @@ margin-bottom: 20px;
   font-size: 2.5rem;
 }
 
+/* About us Style */
+.info-row{
+  background-color: rgba(0, 0, 0, 0.582);
+  background-image: url('https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZSUyMGxlYXJuaW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');
+  color: white;
+  background-blend-mode: darken;
+  background-attachment:fixed;
+  padding-bottom: 20px;
+}
+
+.info-row span{
+  font-size: 40px;
+  font-weight: 700;
+
+}
+
+.icon{
+  padding-top: 40px;
+  margin-bottom: 0px;
+  color: gold;
+  font-size: 50px;
+}
+
+.about{
+  /* background-color: cadetblue; */
+  margin-block: 30px;
+  width: 1000px;
+  margin-inline: auto;
+  border-radius: 10px;
+
+}
+
+.about h2{
+  padding: 10px;
+}
+
+.about p{
+  font-weight: 500;
+  /* color: white; */
+  width: 700px;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+
+/* Teachers Style */
+
+.teachers-section img{
+  height: 300px;
+  object-fit: cover;
+}
 /* course style */
 .card-img{
   width: 100%;
   height: 200px;
+}
+
+.buy-btn-container{
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 /* add order style */
 .purchase-form{
@@ -255,6 +312,10 @@ margin-bottom: 20px;
   align-items: center;
 }
 
+
+.price{
+  font-size: 1.1rem;
+}
 /* .purchase-btn{
   margin: auto;
 } */

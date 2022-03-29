@@ -13,7 +13,7 @@ const HomeService = () => {
         <>
             {/* <Header /> */}
             <div className='pb-4 pt-5'>
-                <h1 className='pb-4 pt-5'>Our Popular Courses</h1>
+                <h2 className='pb-4 pt-5 fs-1 fw-bolder'>Our Popular Courses</h2>
                 <Container>
                     <Row xs={2} lg={3} md={3} className='g-4'  >
                         {
